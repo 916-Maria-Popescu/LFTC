@@ -1,0 +1,24 @@
+2. Syntax
+
+varDeclaration::= "let"<identifier>":"<type>
+type::=<integer>|<string>|<boolean>|<float>
+arrayDeclaration::=<identifier>"["<integer>"]"":"<type>
+declarationList::=<declaration>|<varDeclaration><declaratinList>
+
+factor::=<expression>|<identifier>
+expression::=<term>|<expression>["+"|"-"]<term>
+term::=<term>["*"|"/"]<factor>|<factor>
+assignStmt::=<identifier>"="<expression>
+
+readStmt::=<read>"("<identifier>")"
+writeStmt::=<write>"("<identifier>|<string>")"
+simpleStmt::=<assignStmt>|<readStmt>|<writeStmt>
+
+checkStmt::<check>"("<condition>"){"<stmt>"}"<else>"{"<stmt>"}"
+whileStmt::<while>"("<condition>"){"<stmt>"}"
+complexStmt::=<checkStmt>|<whileStmt>
+
+stmt::=<simpleStmt>|<complexStmt>
+
+relation::=<|>|==|>=|<=
+condition::= <expression><relation><expresion>
