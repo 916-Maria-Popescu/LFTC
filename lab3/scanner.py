@@ -62,7 +62,7 @@ class Scanner:
         index = 1
         with open(program_file, 'r') as f:
             for line in f:
-                tokens = self.get_line_tokens(line.strip())
+                tokens = self.tokens_from_line(line.strip())
                 for i in range(len(tokens)):
                     current_token = tokens[i]
                     if current_token in self.get_all_tokens_declared() and current_token != ' ':
@@ -79,7 +79,7 @@ class Scanner:
                         self.__exceptions.append(exception_string)
                 index += 1
 
-    def get_line_tokens(self, line: str):
+    def tokens_from_line(self, line: str):
         for separator in self.__separators:
             if separator != " ":
                 new_separator = " " + separator + " "
