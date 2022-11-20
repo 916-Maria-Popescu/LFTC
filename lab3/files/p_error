@@ -1,0 +1,11 @@
+let `: int;
+let s: int;
+let a: 1int;
+s = 0;
+read(n);
+while(n>0){
+	read(a)
+	sum = sum + a;
+	n = n-1;
+}
+write(sum);
