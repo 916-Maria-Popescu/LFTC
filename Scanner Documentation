@@ -1,0 +1,57 @@
+Documentation Scanner
+
+init(pif: PIF, st: ST)
+Description: Constructor for Scanner initialize its attributes (separators, operators, reserved_words, st, pif and exceptions). 
+Input: pif: Program Internal Form is structured as a list that stores tupels. First element of the tuple is the token itself while the second element is a tuple 
+with the corresponding hash value and position from the symbol table.
+       st: Symbols Table is structured as a HashTable that stores all the identifiers and constants from the given program
+Output: none
+
+get_exceptions()
+Description: returns a list of strings that represents all the lexical errors found in the program
+Input: none
+Ouput: exceptions list
+
+get_identifiers()
+Description: returns a list of strings that represents all the lexical errors found in the program
+Input: none
+Output: exceptions list
+
+get_separators()
+Description: returns a list of strings that represents all the separators read from "token.in"
+Input: none
+Ouput: separators list
+
+get_reserverd_words()
+Description: returns a list of strings that represents all the reserverd words read from "token.in"
+Input: none
+Ouput: reserverd words list
+
+get_all_tokens_declared()
+Description: returns a list with all the tokens read from "token.in"
+Input: none
+Output: idetifiers list + separators list + reserverd words list
+
+is_operator(elem)
+Description: checks if the given element is a an operator
+Input: elem(string)
+Output: True if elem is an operator, false otherwise
+
+initialise()
+Description: This method is called in the constructor and populates separators, operators and reserved_words lists with the
+information from "token.in" file
+Input: none
+Output: none
+
+scan(program_file)
+Description: This method scans the entire given program and saves that information (lexical errors in exceptions list, identifiers 
+and constants in symbol table and pif). Each line in the file is decomposed in tokens and then each token is saved according to its type
+(separator, identity, constant)
+Input: path to a file that contains the program
+Output: writes the symbol table in "ST.out" and the pif in "PIF.out"
+
+
+tokens_from_line(line)
+Description: This method reads a string and decompose all the data from it in corresponding tokens
+Input: string that represents a line from the program
+Output: a list with all the tokens
