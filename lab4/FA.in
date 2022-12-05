@@ -1,0 +1,12 @@
+all_states = {a, b, c}
+input_symbols = {0, 1}
+initial_state = {a}
+final_state = {c}
+transition_function = {
+(a,0) -> a
+(a,1) -> b
+(b,0) -> c
+(b,1) -> a
+(c,0) -> b
+(c,1) -> c
+}
